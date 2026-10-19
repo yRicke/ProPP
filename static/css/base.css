@@ -44,7 +44,7 @@
     --text-lead: 1.125rem;
     --text-small: 0.875rem;
     --text-caption: 0.75rem;
-    --gutter: clamp(20px, 4vw, 72px);
+    --gutter: clamp(20px, 5vw, 96px);
     --section-space: clamp(80px, 8.5vw, 132px);
     --header-height: 88px;
     --ease: cubic-bezier(0.2, 0, 0, 1);
