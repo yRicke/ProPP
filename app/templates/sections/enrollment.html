@@ -1,0 +1,16 @@
+<section class="section enrollment" id="inscricao" aria-labelledby="enrollment-title">
+    <div class="container enrollment-grid">
+        <div class="enrollment-copy" data-reveal><p class="eyebrow"><span class="section-index">06 /</span> SEU PRÓXIMO PASSO</p><h2 class="section-title" id="enrollment-title" data-heading>INVISTA NA SUA<br><em>PREPARAÇÃO.</em></h2><p>Um método para deixar o improviso para trás. Todos os protocolos, treinos e orientações da PRO em um só lugar.</p><div class="guarantee"><span class="guarantee__number">7<span>DIAS</span></span><div><h3>Entre com confiança.</h3><p>Conheça o conteúdo e a plataforma com 7 dias de garantia.</p></div></div><span class="enrollment-watermark" aria-hidden="true">PRO///</span></div>
+        <div class="price-sheet" data-reveal>
+            <div class="price-sheet__top"><span>ACESSO COMPLETO</span><span class="red-slashes" aria-hidden="true">///</span></div>
+            <p class="price-sheet__label">Oferta de lançamento</p>
+            <p class="price-old">De <s>R$ {{ course.original_price }}</s></p>
+            <p class="price"><span class="price__currency">R$</span> {{ course.price }}<span class="price__cents">,00</span></p>
+            <p class="price-installment">à vista ou 12x de R$ {{ course.installment }}</p>
+            <ul class="price-includes"><li>Acesso completo à plataforma</li><li>Treinos específicos para o esporte</li><li>Protocolos de prevenção de lesões</li><li>Vídeos detalhados dos exercícios</li><li>Atualizações constantes</li><li>Grupo exclusivo no WhatsApp</li><li>Acesso ilimitado</li></ul>
+            <a class="button button--full" href="{{ course.checkout_url }}" target="_blank" rel="noopener noreferrer">Quero fazer parte da PRO {% include 'blocks/arrow.html' %}</a>
+            <p class="payment-note"><svg viewBox="0 0 16 18" fill="none" aria-hidden="true"><rect x="2" y="7" width="12" height="9" rx="1" stroke="currentColor"/><path d="M5 7V4a3 3 0 0 1 6 0v3" stroke="currentColor"/></svg> Pagamento seguro via SharkPays</p>
+            <div class="price-sheet__bottom"><span>100% ONLINE</span><span>ACESSO APÓS A CONFIRMAÇÃO</span></div>
+        </div>
+    </div>
+</section>

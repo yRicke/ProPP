@@ -1,1 +1,28 @@
-Olá!
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{% static 'js/vendor/gsap-3.13.0.min.js' %}"></script>
+    <script defer src="{% static 'js/navigation.js' %}"></script>
+    <script defer src="{% static 'js/landing-interactions.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {% include 'sections/hero.html' %}
+    {% include 'sections/manifesto.html' %}
+    {% include 'sections/method.html' %}
+    {% include 'sections/audience.html' %}
+    {% include 'sections/mentors.html' %}
+    {% include 'sections/testimonials.html' %}
+    {% include 'sections/enrollment.html' %}
+    {% include 'sections/faq.html' %}
+    {% include 'sections/closing.html' %}
+{% endblock %}
+
+{% block overlays %}
+    {% include 'blocks/video_dialog.html' %}
+{% endblock %}

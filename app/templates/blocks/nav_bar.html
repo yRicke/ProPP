@@ -1,0 +1,16 @@
+<header class="site-header" data-header>
+    <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="PRO Prevenção e Performance — início">{% include 'blocks/brand.html' %}</a>
+        <nav class="site-nav" id="navegacao" aria-label="Navegação principal" data-navigation>
+            <a href="#metodo">O método</a>
+            <a href="#para-quem">Para quem</a>
+            <a href="#mentores">Os mentores</a>
+            <a href="#depoimentos">Depoimentos</a>
+            <a class="nav-student" href="{{ course.login_url }}">Área do aluno <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="header-actions">
+            <a class="button button--small" href="#inscricao">Quero fazer parte <span aria-hidden="true">↗</span></a>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="navegacao" aria-expanded="false" data-menu-toggle hidden><span></span><span></span></button>
+        </div>
+    </div>
+</header>

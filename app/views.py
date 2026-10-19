@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .landing_content import LANDING_CONTEXT
 
 def landing(request):
-    return render(request, 'landing.html')
+    return render(request, 'landing.html', LANDING_CONTEXT)

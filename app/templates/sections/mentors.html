@@ -1,0 +1,16 @@
+{% load static %}
+<section class="section mentors" id="mentores" aria-labelledby="mentors-title">
+    <div class="container">
+        <div class="section-heading section-heading--split" data-reveal><div><p class="eyebrow"><span class="section-index">04 /</span> QUEM ESTÁ COM VOCÊ</p><h2 class="section-title" id="mentors-title" data-heading>A PRÁTICA ENSINA.<br><em>A EXPERIÊNCIA GUIA.</em></h2></div><p>Aprenda com profissionais que vivem a preparação física, a prevenção e a performance dentro do esporte.</p></div>
+        <div class="mentor-grid">
+            {% for mentor in mentors %}
+            <article class="mentor" data-reveal>
+                <div class="mentor-photo"><img src="{% static mentor.image %}" alt="{{ mentor.alt }}" width="{{ mentor.width }}" height="{{ mentor.height }}" loading="lazy" decoding="async"><div class="mentor-photo__caption"><span>EXPERIÊNCIA INTERNACIONAL</span><span>{{ mentor.location }} ↗</span></div><span class="mentor-photo__index" aria-hidden="true">0{{ forloop.counter }}</span></div>
+                <div class="mentor-heading"><h3>{{ mentor.name }}</h3><p>{{ mentor.role }}</p></div>
+                <p class="mentor-experience">{{ mentor.experience }}</p>
+                <details class="mentor-details"><summary>Formação e certificações <span aria-hidden="true">+</span></summary><div><p>{{ mentor.formation }}</p><ul>{% for credential in mentor.credentials %}<li>{{ credential }}</li>{% endfor %}</ul></div></details>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+{% load static %}
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="container hero-topline" data-hero-meta><span>CONHECIMENTO QUE MOVE.</span><span>FORMAÇÃO ONLINE <span class="red-slashes" aria-hidden="true">///</span></span></div>
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <p class="eyebrow" data-hero-meta><span class="eyebrow-rule"></span> PREVENÇÃO & PERFORMANCE</p>
+            <h1 class="hero-title" id="hero-title"><span class="title-line"><span data-hero-line>PREVINA LESÕES.</span></span><span class="title-line"><span data-hero-line>ELEVE SUA</span></span><span class="title-line title-line--accent"><span data-hero-line>PERFORMANCE.</span></span></h1>
+            <p class="hero-description" data-hero-meta>Treinar forte é só o começo. Evolua com protocolos práticos de prevenção, força e potência — e um método para seguir.</p>
+            <div class="hero-actions" data-hero-meta>
+                <a class="button" href="#inscricao">Quero evoluir com a PRO {% include 'blocks/arrow.html' %}</a>
+                <a class="text-link" href="#metodo">Conheça o método <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="hero-footnote" data-hero-meta>Para atletas e profissionais do movimento.</p>
+        </div>
+        <div class="hero-art" data-hero-art>
+            <span class="hero-art__index" aria-hidden="true">PRO / EM CAMPO</span>
+            <div class="hero-perspective" data-tilt-area>
+                <div class="hero-board" data-tilt-target>
+                    <div class="hero-board__header"><span>A PREPARAÇÃO MUDA O JOGO.</span><span aria-hidden="true">↗</span></div>
+                    <div class="hero-board__image">
+                        <img src="{% static 'img/mentores-pro.webp' %}" srcset="{% static 'img/mentores-pro-640.webp' %} 640w, {% static 'img/mentores-pro.webp' %} 1080w" sizes="(max-width: 760px) 92vw, 48vw" alt="Os dois mentores da PRO, lado a lado no centro de treinamento" width="1080" height="603" fetchpriority="high" decoding="async">
+                        <span class="hero-board__word" aria-hidden="true">MÉTODO.</span>
+                        <svg class="training-route" viewBox="0 0 500 400" fill="none" aria-hidden="true"><path class="training-route__line" d="M40 338H175Q225 338 225 285V196Q225 142 282 142H405"/><circle cx="40" cy="338" r="6"/><path d="m392 130 13 12-13 12"/><path class="training-route__guide" d="M75 385V30M155 385V30M235 385V30M315 385V30M395 385V30"/></svg>
+                        <span class="photo-corner photo-corner--top" aria-hidden="true"></span><span class="photo-corner photo-corner--bottom" aria-hidden="true"></span>
+                    </div>
+                    <a class="hero-video" href="{{ course.video_url }}" target="_blank" rel="noopener noreferrer" data-video-open data-video-url="{{ course.video_url }}">
+                        <span class="play-icon" aria-hidden="true">▶</span><span><strong>O MÉTODO NA PRÁTICA</strong><small>Assista à apresentação</small></span><span class="hero-video__arrow" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <div class="hero-art__stamp" aria-hidden="true"><span>MENOS IMPROVISO.</span><strong>MAIS DIREÇÃO.</strong><span class="stamp-slashes">///</span></div>
+            </div>
+            <p class="hero-art__caption"><span>MARIO DE ANDRADE & JÉRITON</span><span>DA PRÁTICA PARA O SEU TREINO.</span></p>
+        </div>
+    </div>
+    <div class="container hero-bottom" data-hero-meta><a href="#por-que"><span class="scroll-arrow" aria-hidden="true">↓</span> O próximo nível começa na preparação.</a><span class="hero-bottom__note">PREVENIR. PREPARAR. PERFORMAR.</span></div>
+</section>
+<div class="course-strip"><div class="container course-strip__inner"><span><i aria-hidden="true">↗</i> Experiência internacional</span><span><i aria-hidden="true">↗</i> Aplicação prática</span><span><i aria-hidden="true">↗</i> Acesso ilimitado</span><span><i aria-hidden="true">↗</i> Atualizações constantes</span></div></div>

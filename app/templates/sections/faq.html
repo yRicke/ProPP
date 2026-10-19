@@ -1,0 +1,6 @@
+<section class="section faq" id="duvidas" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+        <div class="faq-heading" data-reveal><p class="eyebrow">ANTES DE COMEÇAR</p><h2 class="section-title" id="faq-title" data-heading>ALINHE SUAS<br><em>EXPECTATIVAS.</em></h2><p>As respostas para dar o próximo passo com clareza.</p><a class="text-link" href="mailto:{{ course.contact_email }}">Ainda tenho uma dúvida {% include 'blocks/arrow.html' %}</a></div>
+        <div class="faq-list" data-reveal>{% for question, answer in faqs %}<details class="faq-item" name="faq"><summary><span>{{ question }}</span><span class="faq-item__plus" aria-hidden="true">+</span></summary><div><p>{{ answer }}</p></div></details>{% endfor %}</div>
+    </div>
+</section>
