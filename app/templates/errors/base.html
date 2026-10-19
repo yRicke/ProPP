@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#f3f1eb">
+        <meta name="robots" content="noindex, nofollow">
+        <title>{% block title %}PRO — Vamos encontrar o caminho{% endblock %}</title>
+        <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
+        <link rel="preload"
+              href="{% static 'fonts/saira-condensed-800-latin.woff2' %}"
+              as="font"
+              type="font/woff2"
+              crossorigin>
+        <link rel="preload"
+              href="{% static 'fonts/manrope-latin.woff2' %}"
+              as="font"
+              type="font/woff2"
+              crossorigin>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/errors.css' %}">
+    </head>
+    <body class="error-page">
+        <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+        <header class="error-header">
+            <div class="container header-inner">
+                <a class="brand" href="/" aria-label="PRO Prevenção e Performance — início">
+                    {% include "blocks/brand.html" %}
+                </a>
+                <span class="error-header__signature">PREVENIR. PREPARAR. PERFORMAR.</span>
+                <a class="text-link" href="/">Página inicial {% include "blocks/arrow.html" %}</a>
+            </div>
+        </header>
+        <main class="container error-main" id="conteudo" tabindex="-1">
+            <div class="error-art" aria-hidden="true">
+                <div class="error-art__sheet">
+                    <div class="error-art__top">
+                        <span>UM DESVIO NO CAMINHO.</span>
+                        <span class="error-art__slashes">///</span>
+                    </div>
+                    <span class="error-code">{% block code %}{% endblock %}</span>
+                    <svg class="error-route" viewBox="0 0 600 400" fill="none">
+                        <path d="M38 342h150q70 0 70-70V135q0-70 70-70h225" />
+                        <circle cx="38" cy="342" r="6" />
+                        <path d="m540 52 13 13-13 13" />
+                    </svg>
+                    <div class="error-art__bottom">
+                        <span>A DIREÇÃO CONTINUA A MESMA.</span>
+                        <span>PRO /</span>
+                    </div>
+                </div>
+            </div>
+            <div class="error-copy">
+                <p class="eyebrow"><span class="eyebrow-rule"></span>{% block label %}{% endblock %}</p>
+                <h1 class="error-title">
+                    {% block heading %}{% endblock %}
+                    <em>{% block accent %}{% endblock %}</em>
+                </h1>
+                <p class="error-description">{% block description %}{% endblock %}</p>
+                <div class="error-actions">
+                    <a class="button" href="/">Voltar ao início {% include "blocks/arrow.html" %}</a>
+                    <a class="text-link" href="mailto:contato@proprevencaoeperformance.com.br">Falar com a PRO <span aria-hidden="true">↗</span></a>
+                </div>
+                <p class="error-note">Seu próximo passo pode começar por aqui.</p>
+                <nav class="error-shortcuts" aria-label="Explore a PRO">
+                    <a href="/#metodo">Conheça o método <span aria-hidden="true">↗</span></a>
+                    <a href="/#duvidas">Tire suas dúvidas <span aria-hidden="true">↗</span></a>
+                </nav>
+            </div>
+        </main>
+        <footer class="container error-footer">
+            <small>© {% now "Y" %} PRO Prevenção e Performance.</small>
+            <span>CONHECIMENTO QUE MOVE. <span class="red-slashes" aria-hidden="true">///</span></span>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "errors/base.html" %}
+
+{% block title %}403 — Acesso não disponível | PRO{% endblock %}
+{% block code %}403{% endblock %}
+{% block label %}ACESSO NÃO DISPONÍVEL{% endblock %}
+{% block heading %}ESSE CAMINHO{% endblock %}
+{% block accent %}ESTÁ RESTRITO.{% endblock %}
+{% block description %}
+    {% if csrf_failure %}
+        Não foi possível confirmar sua solicitação. A página pode ter ficado aberta por muito tempo. Volte ao início e tente novamente.
+    {% else %}
+        Você não tem permissão para acessar esta página. Volte ao início ou fale com a equipe da PRO se precisar de ajuda.
+    {% endif %}
+{% endblock %}

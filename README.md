@@ -36,6 +36,27 @@ Na verificação de 19/10/2026, o embed do vídeo respondeu HTTP 200, mas o play
 
 Nenhum fluxo de autenticação, pagamento ou persistência foi implementado nesta etapa.
 
+## Páginas de erro
+
+Os erros **400, 403, 404 e 500** usam a identidade visual da PRO, com caminhos para voltar ao início, conhecer o método e falar com a equipe. As falhas de CSRF também usam a página 403, com uma orientação própria.
+
+Os handlers estão em `app/error_views.py`, os templates em `app/templates/400.html`, `403.html`, `404.html`, `500.html` e `errors/base.html`, e os estilos em `static/css/errors.css`. A renderização dispensa processadores de contexto, consultas e os dados da landing; não exibe a mensagem interna da exceção.
+
+Com `DEBUG=True`, é possível revisar cada página em:
+
+- `http://127.0.0.1:8000/preview/erros/400/`
+- `http://127.0.0.1:8000/preview/erros/403/`
+- `http://127.0.0.1:8000/preview/erros/404/`
+- `http://127.0.0.1:8000/preview/erros/500/`
+
+As prévias ficam indisponíveis fora do modo de desenvolvimento. Os erros reais 400, 404 e 500 usam as páginas personalizadas com `DEBUG=False`; o modo de depuração do Django continua disponível durante o desenvolvimento. A configuração de `DEBUG` não foi alterada.
+
+Para verificar o encaminhamento dos erros, CSRF, host inválido e independência dos processadores de contexto:
+
+```powershell
+.\venv\Scripts\python.exe manage.py test app
+```
+
 ## Verificação
 
 - `manage.py check`: sem problemas; `/` e `/landing/` retornam HTTP 200.
