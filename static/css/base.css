@@ -589,7 +589,6 @@ em {
     }
     .button--small {
         padding-inline: 10px;
-        font-size: var(--text-caption);
         gap: 8px;
     }
     .site-nav.is-open {
