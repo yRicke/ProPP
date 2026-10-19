@@ -44,8 +44,7 @@
     --text-lead: 1.125rem;
     --text-small: 0.875rem;
     --text-caption: 0.75rem;
-    --container: 1280px;
-    --gutter: clamp(22px, 4.5vw, 72px);
+    --gutter: clamp(20px, 3vw, 56px);
     --section-space: clamp(80px, 8.5vw, 132px);
     --header-height: 88px;
     --ease: cubic-bezier(0.2, 0, 0, 1);
@@ -139,7 +138,7 @@ em {
     display: none !important;
 }
 .container {
-    width: min(var(--container), calc(100% - var(--gutter) * 2));
+    width: calc(100% - var(--gutter) * 2);
     margin-inline: auto;
 }
 .section {
@@ -505,11 +504,6 @@ em {
     text-underline-offset: 4px;
 }
 
-@media (min-width: 1600px) {
-    :root {
-        --container: 1360px;
-    }
-}
 @media (max-width: 1100px) {
     .brand-descriptor {
         display: none;
