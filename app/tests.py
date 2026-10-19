@@ -35,7 +35,12 @@ urlpatterns = [
 ]
 
 
-@override_settings(DEBUG=False, ALLOWED_HOSTS=["testserver"], ROOT_URLCONF=__name__)
+@override_settings(
+    DEBUG=False,
+    ALLOWED_HOSTS=["testserver"],
+    ROOT_URLCONF=__name__,
+    SECURE_SSL_REDIRECT=False,
+)
 class ErrorPageTests(SimpleTestCase):
     def test_exceptions_reach_the_correct_error_pages(self):
         client = Client(raise_request_exception=False)

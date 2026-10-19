@@ -10,22 +10,63 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# As variáveis da hospedagem têm prioridade sobre o arquivo local.
+ON_VERCEL = os.environ.get('VERCEL') == '1'
+if not ON_VERCEL:
+    load_dotenv(BASE_DIR / '.env', override=False)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e@s-(4+8c0v10j8*j6wf4lct0odsmh@8e)bz8ztoheo4#%(yk2'
+def env_bool(name, default=False):
+    value = os.environ.get(name, str(default)).strip().lower()
+    if value not in ('true', 'false', '1', '0', 'yes', 'no'):
+        raise ImproperlyConfigured(f'{name} deve ser true ou false.')
+    return value in ('true', '1', 'yes')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+def env_list(name, default=''):
+    return [value.strip() for value in os.environ.get(name, default).split(',') if value.strip()]
+
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '').strip()
+if not SECRET_KEY:
+    raise ImproperlyConfigured('Configure DJANGO_SECRET_KEY no ambiente ou no arquivo .env.')
+
+DEBUG = env_bool('DJANGO_DEBUG')
+if ON_VERCEL and DEBUG:
+    raise ImproperlyConfigured('DJANGO_DEBUG deve ser false na Vercel.')
+
+ALLOWED_HOSTS = env_list(
+    'DJANGO_ALLOWED_HOSTS',
+    'localhost,127.0.0.1,[::1]' if DEBUG else '',
+)
+CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS')
+
+if ON_VERCEL:
+    # Endereços exatos do deployment e do domínio principal, sem liberar hosts arbitrários.
+    for variable in ('VERCEL_URL', 'VERCEL_PROJECT_PRODUCTION_URL'):
+        host = os.environ.get(variable, '').strip()
+        if host and host not in ALLOWED_HOSTS:
+            ALLOWED_HOSTS.append(host)
+        origin = f'https://{host}'
+        if host and origin not in CSRF_TRUSTED_ORIGINS:
+            CSRF_TRUSTED_ORIGINS.append(origin)
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = env_bool('DJANGO_SECURE_SSL_REDIRECT', default=not DEBUG)
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+SECURE_HSTS_SECONDS = 31536000 if not DEBUG else 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
 
 # Application definition
@@ -126,6 +167,19 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MAILERS = {
     'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+        'BACKEND': (
+            'django.core.mail.backends.console.EmailBackend'
+            if DEBUG else 'django.core.mail.backends.smtp.EmailBackend'
+        ),
     },
 }
+
+if not DEBUG:
+    MAILERS['default']['OPTIONS'] = {
+        'host': os.environ.get('SMTP_HOST', 'localhost'),
+        'port': int(os.environ.get('SMTP_PORT', '587')),
+        'username': os.environ.get('SMTP_USERNAME', ''),
+        'password': os.environ.get('SMTP_PASSWORD', ''),
+        'use_tls': env_bool('SMTP_USE_TLS', default=True),
+        'timeout': 10,
+    }

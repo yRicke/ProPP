@@ -1,0 +1,15 @@
+.env*
+!.env.example
+venv/
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+db.sqlite3*
+staticfiles/
+media/
+.tmp-tree/
+.tmp-edge-profile*/
+node_modules/
+.agents/
+utilizaveis/
