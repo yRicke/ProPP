@@ -32,7 +32,7 @@ Configure em **Production** e **Preview**:
 | `DJANGO_CSRF_TRUSTED_ORIGINS` | Origens dos domínios próprios com `https://`, separadas por vírgula. |
 | `DJANGO_SECURE_SSL_REDIRECT` | `true` |
 
-Mantenha a exposição das variáveis de sistema da Vercel habilitada: `VERCEL_URL` e `VERCEL_PROJECT_PRODUCTION_URL` adicionam automaticamente os hosts e as origens exatos do deployment e do domínio principal. Não é necessário liberar `*` ou todos os subdomínios de `vercel.app`.
+Mantenha a exposição das variáveis de sistema da Vercel habilitada: `VERCEL_URL`, `VERCEL_BRANCH_URL` e `VERCEL_PROJECT_PRODUCTION_URL` adicionam automaticamente os hosts e as origens exatos do deployment, da branch e do domínio principal. Não é necessário liberar `*` ou todos os subdomínios de `vercel.app`.
 
 Sem uma `DJANGO_SECRET_KEY`, a aplicação recusa iniciar. O modo debug também é recusado na Vercel. Em produção, cookies usam HTTPS, o proxy da Vercel é reconhecido e as respostas HTTPS recebem HSTS. A chave anteriormente presente no código foi substituída; não a reutilize em nenhum ambiente.
 

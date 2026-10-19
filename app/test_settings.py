@@ -31,16 +31,19 @@ class EnvironmentSettingsTests(SimpleTestCase):
     def test_vercel_hosts_and_custom_domains_are_allowed_explicitly(self):
         config = self.load_settings(
             VERCEL_URL='propp-deployment.vercel.app',
+            VERCEL_BRANCH_URL='propp-git-feature.vercel.app',
             VERCEL_PROJECT_PRODUCTION_URL='propp.vercel.app',
             DJANGO_ALLOWED_HOSTS=' curso.example.com, propp.vercel.app, ',
             DJANGO_CSRF_TRUSTED_ORIGINS=' https://curso.example.com, ',
         )
         self.assertCountEqual(config['ALLOWED_HOSTS'], [
-            'curso.example.com', 'propp-deployment.vercel.app', 'propp.vercel.app',
+            'curso.example.com', 'propp-deployment.vercel.app',
+            'propp-git-feature.vercel.app', 'propp.vercel.app',
         ])
         self.assertCountEqual(config['CSRF_TRUSTED_ORIGINS'], [
             'https://curso.example.com',
             'https://propp-deployment.vercel.app',
+            'https://propp-git-feature.vercel.app',
             'https://propp.vercel.app',
         ])
 

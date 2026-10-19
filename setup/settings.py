@@ -51,8 +51,8 @@ ALLOWED_HOSTS = env_list(
 CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS')
 
 if ON_VERCEL:
-    # Endereços exatos do deployment e do domínio principal, sem liberar hosts arbitrários.
-    for variable in ('VERCEL_URL', 'VERCEL_PROJECT_PRODUCTION_URL'):
+    # Endereços exatos do deployment, da branch e do domínio principal.
+    for variable in ('VERCEL_URL', 'VERCEL_BRANCH_URL', 'VERCEL_PROJECT_PRODUCTION_URL'):
         host = os.environ.get(variable, '').strip()
         if host and host not in ALLOWED_HOSTS:
             ALLOWED_HOSTS.append(host)
