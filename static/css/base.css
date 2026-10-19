@@ -40,6 +40,10 @@
     --line-light: #ffffff26;
     --font-body: Manrope, Arial, sans-serif;
     --font-display: "Saira Condensed", Impact, "Arial Narrow", sans-serif;
+    --text-body: 1.0625rem;
+    --text-lead: 1.125rem;
+    --text-small: 0.875rem;
+    --text-caption: 0.75rem;
     --container: 1280px;
     --gutter: clamp(22px, 4.5vw, 72px);
     --section-space: clamp(80px, 8.5vw, 132px);
@@ -63,7 +67,7 @@ body {
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: var(--text-body);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
@@ -145,7 +149,7 @@ em {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 10px;
+    font-size: var(--text-caption);
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: 0.12em;
@@ -203,7 +207,7 @@ em {
     background: var(--red);
     border: 1px solid var(--red);
     color: #fff;
-    font-size: 12px;
+    font-size: var(--text-small);
     font-weight: 700;
     line-height: 1.4;
     transition:
@@ -227,7 +231,7 @@ em {
 .button--small {
     min-height: 44px;
     padding: 12px 18px;
-    font-size: 11px;
+    font-size: var(--text-small);
     gap: 24px;
 }
 .button--full {
@@ -238,7 +242,7 @@ em {
     align-items: center;
     gap: 16px;
     min-height: 44px;
-    font-size: 12px;
+    font-size: var(--text-small);
     font-weight: 700;
 }
 .text-link::after {
@@ -333,7 +337,7 @@ em {
 .brand-descriptor {
     border-left: 1px solid var(--line);
     padding-left: 12px;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 700;
     line-height: 1.45;
     letter-spacing: 0.06em;
@@ -346,7 +350,7 @@ em {
 .site-nav a {
     position: relative;
     padding-block: 12px;
-    font-size: 12px;
+    font-size: var(--text-small);
     font-weight: 600;
     white-space: nowrap;
 }
@@ -414,7 +418,7 @@ em {
     padding-bottom: 55px;
 }
 .footer-top p {
-    font-size: 13px;
+    font-size: var(--text-small);
     color: #b7bbb5;
 }
 .footer-bottom {
@@ -427,18 +431,18 @@ em {
     color: #b7bbb5;
 }
 .footer-bottom small {
-    font-size: 10px;
+    font-size: var(--text-caption);
 }
 .footer-bottom nav {
     display: flex;
     gap: 26px;
-    font-size: 10px;
+    font-size: var(--text-small);
 }
 .footer-bottom a:hover {
     color: #fff;
 }
 .footer-signature {
-    font-size: 8px;
+    font-size: var(--text-caption);
     letter-spacing: 0.1em;
 }
 
@@ -483,7 +487,7 @@ em {
     inset: 0;
     background: #171c19;
     color: #c9cdc6;
-    font-size: 13px;
+    font-size: var(--text-small);
     pointer-events: none;
 }
 .video-dialog__player iframe {
@@ -494,7 +498,7 @@ em {
 .video-dialog > p {
     padding-top: 15px;
     color: #b7bbb5;
-    font-size: 11px;
+    font-size: var(--text-small);
 }
 .video-dialog > p a {
     text-decoration: underline;
@@ -514,7 +518,7 @@ em {
         gap: 24px;
     }
     .site-nav {
-        gap: 22px;
+        gap: 16px;
     }
     .footer-signature {
         display: none;
@@ -554,15 +558,14 @@ em {
     }
     .section-heading--split > p {
         max-width: 270px;
-        font-size: 13px;
+        font-size: var(--text-body);
     }
 }
 @media (max-width: 600px) {
     :root {
         --header-height: 72px;
-    }
-    body {
-        font-size: 14px;
+        --text-body: 1rem;
+        --text-lead: 1rem;
     }
     .section-title {
         font-size: clamp(43px, 9vw, 58px);
@@ -577,10 +580,8 @@ em {
     .section-heading--split > p {
         max-width: 100%;
         margin-top: 24px;
-        font-size: 14px;
     }
     .eyebrow {
-        font-size: 9px;
         gap: 9px;
     }
     .brand-word {
@@ -590,12 +591,12 @@ em {
         display: none;
     }
     .header-actions {
-        gap: 10px;
+        gap: 8px;
     }
     .button--small {
-        padding-inline: 13px;
-        font-size: 10px;
-        gap: 16px;
+        padding-inline: 10px;
+        font-size: var(--text-caption);
+        gap: 8px;
     }
     .site-nav.is-open {
         flex-direction: column;
@@ -605,7 +606,7 @@ em {
     }
     .site-nav.is-open a {
         padding: 12px 0;
-        font-size: 13px;
+        font-size: var(--text-body);
     }
     .footer-top {
         flex-wrap: wrap;
@@ -616,7 +617,6 @@ em {
         flex-basis: 50%;
         text-align: right;
         margin-left: auto;
-        font-size: 11px;
     }
     .footer-top .text-link {
         flex-basis: 100%;

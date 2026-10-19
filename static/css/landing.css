@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 22px;
-    font-size: 8px;
+    font-size: var(--text-caption);
     font-weight: 600;
     letter-spacing: 0.12em;
     color: var(--muted);
@@ -57,13 +57,14 @@
     color: var(--red);
 }
 .hero-description {
-    max-width: 405px;
+    max-width: 470px;
     color: var(--muted);
-    font-size: 14px;
+    font-size: var(--text-lead);
     line-height: 1.85;
 }
 .hero-actions {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 28px;
     margin-top: 30px;
@@ -73,7 +74,7 @@
 }
 .hero-footnote {
     margin-top: 18px;
-    font-size: 10px;
+    font-size: var(--text-caption);
     color: var(--muted);
 }
 .hero-art {
@@ -99,7 +100,7 @@
     position: absolute;
     top: -22px;
     right: 16px;
-    font-size: 8px;
+    font-size: var(--text-caption);
     letter-spacing: 0.13em;
     color: var(--muted);
 }
@@ -119,7 +120,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    font-size: 8px;
+    font-size: var(--text-caption);
     letter-spacing: 0.13em;
     color: #c9cdc6;
     border-bottom: 1px solid #ffffff14;
@@ -224,13 +225,13 @@
 }
 .hero-video strong {
     display: block;
-    font-size: 9px;
+    font-size: var(--text-small);
     font-weight: 600;
     letter-spacing: 0.1em;
 }
 .hero-video small {
     display: block;
-    font-size: 10px;
+    font-size: var(--text-small);
     color: #adb5ab;
     margin-top: 3px;
 }
@@ -259,7 +260,7 @@
     pointer-events: none;
 }
 .hero-art__stamp > span:first-child {
-    font-size: 7px;
+    font-size: var(--text-caption);
     letter-spacing: 0.05em;
 }
 .hero-art__stamp strong {
@@ -280,9 +281,10 @@
 .hero-art__caption {
     display: flex;
     justify-content: space-between;
+    gap: 16px;
     margin-top: 34px;
     padding-inline: 2px;
-    font-size: 6.5px;
+    font-size: var(--text-caption);
     letter-spacing: 0.07em;
     color: var(--muted);
 }
@@ -292,7 +294,7 @@
     align-items: center;
     border-top: 1px solid var(--line);
     padding-block: 20px;
-    font-size: 9px;
+    font-size: var(--text-caption);
     color: var(--muted);
 }
 .hero-bottom > a {
@@ -306,7 +308,7 @@
     color: var(--red);
 }
 .hero-bottom__note {
-    font-size: 8px;
+    font-size: var(--text-caption);
     letter-spacing: 0.1em;
 }
 .course-strip {
@@ -323,7 +325,7 @@
     display: flex;
     gap: 15px;
     align-items: center;
-    font-size: 10px;
+    font-size: var(--text-small);
 }
 .course-strip i {
     font-style: normal;
@@ -368,7 +370,7 @@
     margin-top: 28px;
     padding-top: 24px;
     border-top: 1px solid var(--line);
-    font-size: 10px;
+    font-size: var(--text-small);
 }
 .problem-list > span::before {
     content: "↗";
@@ -437,7 +439,7 @@
     z-index: 1;
     bottom: 26px;
     left: 28px;
-    font-size: 10px;
+    font-size: var(--text-small);
     color: #e3e8df;
 }
 .method-list {
@@ -452,7 +454,7 @@
 }
 .method-item__number {
     padding-top: 6px;
-    font-size: 10px;
+    font-size: var(--text-caption);
     color: var(--red-bright);
 }
 .method-item h3 {
@@ -463,7 +465,7 @@
 }
 .method-item p {
     margin-top: 9px;
-    font-size: 12px;
+    font-size: var(--text-body);
     line-height: 1.85;
     color: #b2b8b0;
     max-width: 360px;
@@ -471,7 +473,7 @@
 .method-item__detail {
     display: block;
     margin-top: 14px;
-    font-size: 9px;
+    font-size: var(--text-caption);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #e2e7dd;
@@ -489,7 +491,7 @@
     border-top: 1px solid var(--line-light);
 }
 .delivery-heading .eyebrow {
-    font-size: 8px;
+    font-size: var(--text-caption);
     color: #b2b8b0;
 }
 .delivery-heading h3 {
@@ -501,7 +503,7 @@
 }
 .delivery-heading .text-link {
     margin-top: 22px;
-    font-size: 10px;
+    font-size: var(--text-small);
 }
 .delivery-grid {
     display: grid;
@@ -520,13 +522,13 @@
     color: var(--red-bright);
 }
 .delivery-item h4 {
-    font-size: 12px;
+    font-size: var(--text-small);
     font-weight: 600;
 }
 .delivery-item p {
     margin-top: 8px;
     color: #b2b8b0;
-    font-size: 11px;
+    font-size: var(--text-body);
     line-height: 1.8;
 }
 
@@ -544,11 +546,11 @@
 .audience-profiles__index {
     display: block;
     margin-bottom: 24px;
-    font-size: 11px;
+    font-size: var(--text-caption);
     color: var(--red);
 }
 .audience-profiles .eyebrow {
-    font-size: 8px;
+    font-size: var(--text-caption);
     color: var(--muted);
     letter-spacing: 0.055em;
 }
@@ -562,7 +564,7 @@
 .audience-profiles article > p:last-child {
     margin-top: 16px;
     color: var(--muted);
-    font-size: 13px;
+    font-size: var(--text-body);
     line-height: 1.85;
     max-width: 325px;
 }
@@ -614,7 +616,7 @@
     border-top: 1px solid var(--line);
 }
 .sports-list span {
-    font-size: 9px;
+    font-size: var(--text-small);
     color: var(--muted);
 }
 .sports-list span:not(:last-child)::after {
@@ -660,22 +662,23 @@
     gap: 10px;
     color: white;
     background: linear-gradient(transparent, #0a110bdd);
-    font-size: 8px;
+    font-size: var(--text-caption);
     letter-spacing: 0.08em;
 }
 .mentor-photo__caption span:last-child {
-    font-size: 10px;
+    font-size: var(--text-caption);
     letter-spacing: 0;
 }
 .mentor-photo__index {
     position: absolute;
     top: 20px;
     left: 22px;
-    font-size: 10px;
+    font-size: var(--text-caption);
     color: white;
 }
 .mentor-heading {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
     gap: 20px;
@@ -688,14 +691,14 @@
     line-height: 1.2;
 }
 .mentor-heading p {
-    font-size: 9px;
+    font-size: var(--text-small);
     text-transform: uppercase;
     color: var(--red);
     letter-spacing: 0.04em;
 }
 .mentor-experience {
     margin-top: 14px;
-    font-size: 12px;
+    font-size: var(--text-body);
     line-height: 1.85;
     color: var(--muted);
 }
@@ -710,7 +713,7 @@
     min-height: 52px;
     padding-block: 12px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: var(--text-small);
     font-weight: 600;
     list-style: none;
 }
@@ -727,7 +730,7 @@
 }
 .mentor-details > div {
     padding: 4px 0 20px;
-    font-size: 12px;
+    font-size: var(--text-body);
     color: var(--muted);
 }
 .mentor-details ul {
@@ -788,7 +791,7 @@
     height: 66px;
 }
 .testimonial blockquote {
-    font-size: 15px;
+    font-size: var(--text-lead);
     line-height: 1.85;
     padding-bottom: 36px;
 }
@@ -810,18 +813,18 @@
 }
 .testimonial figcaption strong {
     display: block;
-    font-size: 10px;
+    font-size: var(--text-small);
     font-weight: 600;
 }
 .testimonial figcaption div > span {
     display: block;
     margin-top: 3px;
-    font-size: 8px;
+    font-size: var(--text-small);
     color: #b2b8b0;
 }
 .testimonial__index {
     margin-left: auto;
-    font-size: 8px;
+    font-size: var(--text-caption);
     color: #b2b8b0;
 }
 .testimonial-bottom {
@@ -831,7 +834,7 @@
     margin-top: 25px;
     padding-top: 20px;
     border-top: 1px solid var(--line-light);
-    font-size: 8px;
+    font-size: var(--text-caption);
     color: #b2b8b0;
     letter-spacing: 0.08em;
 }
@@ -885,16 +888,16 @@
 .guarantee__number > span {
     margin-top: 5px;
     font-family: var(--font-body);
-    font-size: 8px;
+    font-size: var(--text-caption);
     letter-spacing: 0.1em;
 }
 .guarantee h3 {
-    font-size: 13px;
+    font-size: var(--text-body);
     font-weight: 600;
 }
 .guarantee p {
     color: var(--muted);
-    font-size: 11px;
+    font-size: var(--text-small);
     margin-top: 5px;
 }
 .enrollment-watermark {
@@ -930,7 +933,7 @@
     align-items: center;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--line);
-    font-size: 8px;
+    font-size: var(--text-caption);
     font-weight: 600;
     letter-spacing: 0.1em;
 }
@@ -940,13 +943,13 @@
 }
 .price-sheet__label {
     margin-top: 25px;
-    font-size: 11px;
+    font-size: var(--text-small);
     color: var(--red);
     font-weight: 600;
 }
 .price-old {
     margin-top: 14px;
-    font-size: 12px;
+    font-size: var(--text-small);
     color: var(--muted);
 }
 .price {
@@ -969,7 +972,7 @@
     font-size: 44px;
 }
 .price-installment {
-    font-size: 12px;
+    font-size: var(--text-body);
     color: var(--muted);
 }
 .price-includes {
@@ -978,7 +981,7 @@
     margin: 28px 0;
     padding-top: 25px;
     border-top: 1px solid var(--line);
-    font-size: 12px;
+    font-size: var(--text-body);
 }
 .price-includes li::before {
     content: "✓";
@@ -991,7 +994,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    font-size: 9px;
+    font-size: var(--text-caption);
     color: var(--muted);
     padding-block: 15px 22px;
 }
@@ -1001,12 +1004,13 @@
 }
 .price-sheet__bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
     padding-block: 15px;
     border-top: 1px solid var(--line);
-    font-size: 7px;
+    font-size: var(--text-caption);
     letter-spacing: 0.08em;
     color: var(--muted);
 }
@@ -1026,11 +1030,11 @@
     margin-top: 23px;
     max-width: 260px;
     color: var(--muted);
-    font-size: 13px;
+    font-size: var(--text-body);
 }
 .faq-heading .text-link {
     margin-top: 20px;
-    font-size: 11px;
+    font-size: var(--text-small);
 }
 .faq-list {
     border-top: 1px solid var(--line);
@@ -1045,7 +1049,7 @@
     gap: 25px;
     min-height: 73px;
     padding-block: 21px;
-    font-size: 12px;
+    font-size: var(--text-body);
     font-weight: 600;
     cursor: pointer;
     list-style: none;
@@ -1066,7 +1070,7 @@
 .faq-item > div {
     padding: 0 40px 24px 0;
     color: var(--muted);
-    font-size: 12px;
+    font-size: var(--text-body);
     line-height: 1.9;
 }
 .closing {
@@ -1079,7 +1083,7 @@
     padding-right: 110px;
 }
 .closing .eyebrow {
-    font-size: 8px;
+    font-size: var(--text-caption);
     color: #f6ded8;
 }
 .closing h2 {
@@ -1148,19 +1152,14 @@
     .hero-actions .button {
         padding-inline: 17px;
         gap: 18px;
-        font-size: 11px;
     }
     .hero-actions .text-link {
-        font-size: 10px;
         gap: 10px;
     }
     .hero-art__stamp {
         right: -22px;
         bottom: 97px;
         width: 145px;
-    }
-    .hero-art__caption {
-        font-size: 6px;
     }
     .manifesto-grid {
         gap: 65px;
@@ -1192,9 +1191,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
-    }
-    .hero-description {
-        font-size: 12px;
     }
     .hero-board__image {
         height: 300px;
@@ -1285,7 +1281,6 @@
         margin-block: 24px;
     }
     .hero-description {
-        font-size: 14px;
         max-width: 440px;
     }
     .hero-actions {
@@ -1294,11 +1289,7 @@
         gap: 25px;
     }
     .hero-actions .button {
-        font-size: 12px;
         padding: 16px 20px;
-    }
-    .hero-actions .text-link {
-        font-size: 11px;
     }
     .hero-art {
         max-width: 500px;
@@ -1316,7 +1307,6 @@
     }
     .hero-art__caption {
         flex-direction: row;
-        font-size: 6.5px;
     }
     .hero-bottom__note {
         display: none;
@@ -1325,9 +1315,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 15px 28px;
-    }
-    .course-strip__inner > span {
-        font-size: 9px;
     }
     .manifesto-grid {
         grid-template-columns: 1fr;
@@ -1424,10 +1411,6 @@
         flex-direction: column;
         gap: 4px;
         padding-inline: 15px;
-        font-size: 7px;
-    }
-    .mentor-experience {
-        font-size: 11px;
     }
     .enrollment-grid {
         grid-template-columns: 1fr;
@@ -1459,20 +1442,15 @@
 @media (max-width: 600px) {
     .hero-topline {
         padding-top: 18px;
-        font-size: 6px;
     }
     .hero-grid {
         padding-block: 35px 40px;
-    }
-    .hero-copy > .eyebrow {
-        font-size: 8px;
     }
     .hero-title {
         font-size: clamp(45px, 14.85vw, 77px);
         line-height: 0.98;
     }
     .hero-description {
-        font-size: 13px;
         max-width: 365px;
     }
     .hero-actions {
@@ -1482,14 +1460,9 @@
     }
     .hero-actions .button {
         min-height: 54px;
-        font-size: 11px;
         gap: 20px;
     }
-    .hero-actions .text-link {
-        font-size: 10px;
-    }
     .hero-footnote {
-        font-size: 9px;
         margin-top: 14px;
     }
     .hero-art {
@@ -1501,7 +1474,6 @@
     }
     .hero-board__header {
         padding-inline: 16px;
-        font-size: 7px;
     }
     .hero-board__image {
         height: clamp(260px, 73vw, 370px);
@@ -1520,7 +1492,6 @@
         font-size: 23px;
     }
     .hero-art__caption {
-        font-size: 5.5px;
         margin-top: 30px;
         gap: 6px;
     }
@@ -1529,14 +1500,12 @@
     }
     .hero-bottom {
         padding-block: 12px;
-        font-size: 8px;
     }
     .course-strip__inner {
         gap: 13px 18px;
         padding-block: 20px;
     }
     .course-strip__inner > span {
-        font-size: 8px;
         gap: 8px;
     }
     .manifesto-copy .lead {
@@ -1544,7 +1513,6 @@
     }
     .problem-list {
         gap: 10px 15px;
-        font-size: 9px;
     }
     .method-photo {
         height: 370px;
@@ -1559,7 +1527,6 @@
     }
     .method-photo figcaption {
         left: 22px;
-        font-size: 9px;
     }
     .delivery-heading h3 {
         font-size: 32px;
@@ -1567,12 +1534,6 @@
     .delivery-grid {
         grid-template-columns: 1fr 1fr;
         gap: 28px 22px;
-    }
-    .delivery-item h4 {
-        font-size: 11px;
-    }
-    .delivery-item p {
-        font-size: 11px;
     }
     .audience-profiles {
         margin-bottom: 36px;
@@ -1587,9 +1548,6 @@
     .sports-list {
         justify-content: flex-start;
         gap: 8px 12px;
-    }
-    .sports-list span {
-        font-size: 8px;
     }
     .sports-list span:not(:last-child)::after {
         margin-left: 12px;
@@ -1606,7 +1564,6 @@
     }
     .mentor-photo__caption {
         flex-direction: row;
-        font-size: 7px;
         padding-inline: 20px;
     }
     .mentor-heading {
@@ -1615,12 +1572,6 @@
     }
     .mentor-heading h3 {
         font-size: 32px;
-    }
-    .mentor-heading p {
-        font-size: 8px;
-    }
-    .mentor-experience {
-        font-size: 12px;
     }
     .testimonial-navigation {
         margin-top: 28px;
@@ -1632,18 +1583,8 @@
     .testimonial {
         flex-basis: 90%;
     }
-    .testimonial blockquote {
-        font-size: 16px;
-    }
     .testimonial-bottom {
-        font-size: 6px;
         gap: 20px;
-    }
-    .testimonial figcaption strong {
-        font-size: 11px;
-    }
-    .testimonial figcaption div > span {
-        font-size: 9px;
     }
     .price-sheet {
         padding-inline: 24px;
@@ -1652,14 +1593,10 @@
     .price {
         font-size: 105px;
     }
-    .price-sheet__bottom {
-        font-size: 6px;
-    }
     .faq .section-title {
         font-size: 48px;
     }
     .faq-item summary {
-        font-size: 11px;
         min-height: 72px;
     }
     .closing {
