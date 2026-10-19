@@ -1,14 +1,75 @@
 {% load static %}
-<section class="section audience" id="para-quem" aria-labelledby="audience-title">
+<section class="section audience"
+         id="para-quem"
+         aria-labelledby="audience-title">
     <div class="container">
-        <div class="section-heading section-heading--split" data-reveal><div><p class="eyebrow"><span class="section-index">03 /</span> PARA QUEM SE MOVE</p><h2 class="section-title" id="audience-title" data-heading>SEU ESPORTE.<br><em>SUA PRÓXIMA VERSÃO.</em></h2></div><p>Acelerar, saltar, mudar de direção. As modalidades mudam. A necessidade de uma boa preparação permanece.</p></div>
-        <div class="audience-profiles">{% for audience in audiences %}<article data-reveal><span class="audience-profiles__index">0{{ forloop.counter }} /</span><p class="eyebrow">{{ audience.label }}</p><h3>{{ audience.title }}</h3><p>{{ audience.description }}</p></article>{% endfor %}</div>
-        <div class="athlete-gallery" aria-label="Atletas de diferentes modalidades" data-reveal>
-            <figure><img src="{% static 'img/atleta-futsal.webp' %}" alt="Atleta de futsal com o troféu de uma conquista" width="720" height="720" loading="lazy" decoding="async"><figcaption>NA QUADRA.</figcaption></figure>
-            <figure><img src="{% static 'img/atleta-trail.webp' %}" alt="Atleta cruzando a chegada de uma prova de trail run" width="720" height="720" loading="lazy" decoding="async"><figcaption>NA SUPERAÇÃO.</figcaption></figure>
-            <figure><img src="{% static 'img/atleta-conquista.webp' %}" alt="Atleta recebendo uma premiação em competição esportiva" width="720" height="720" loading="lazy" decoding="async"><figcaption>NA CONQUISTA.</figcaption></figure>
-            <figure><img src="{% static 'img/atleta-corrida.webp' %}" alt="Atleta de corrida durante uma prova de rua" width="720" height="720" loading="lazy" decoding="async"><figcaption>NO SEU RITMO.</figcaption></figure>
+        <div class="section-heading section-heading--split" data-reveal>
+            <div>
+                <p class="eyebrow">
+                    <span class="section-index">03 /</span> PARA QUEM SE MOVE
+                </p>
+                <h2 class="section-title" id="audience-title" data-heading>
+                    SEU ESPORTE.
+                    <br>
+                    <em>SUA PRÓXIMA VERSÃO.</em>
+                </h2>
+            </div>
+            <p>Acelerar, saltar, mudar de direção. As modalidades mudam. A necessidade de uma boa preparação permanece.</p>
         </div>
-        <div class="sports-list" aria-label="Modalidades atendidas">{% for sport in sports %}<span>{{ sport }}</span>{% endfor %}</div>
+        <div class="audience-profiles">
+            {% for audience in audiences %}
+                <article data-reveal>
+                    <span class="audience-profiles__index">0{{ forloop.counter }} /</span>
+                    <p class="eyebrow">{{ audience.label }}</p>
+                    <h3>{{ audience.title }}</h3>
+                    <p>{{ audience.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
+        <div class="athlete-gallery"
+             aria-label="Atletas de diferentes modalidades"
+             data-reveal>
+            <figure>
+                <img src="{% static 'img/atleta-futsal.webp' %}"
+                     alt="Atleta de futsal com o troféu de uma conquista"
+                     width="720"
+                     height="720"
+                     loading="lazy"
+                     decoding="async">
+                <figcaption>NA QUADRA.</figcaption>
+            </figure>
+            <figure>
+                <img src="{% static 'img/atleta-trail.webp' %}"
+                     alt="Atleta cruzando a chegada de uma prova de trail run"
+                     width="720"
+                     height="720"
+                     loading="lazy"
+                     decoding="async">
+                <figcaption>NA SUPERAÇÃO.</figcaption>
+            </figure>
+            <figure>
+                <img src="{% static 'img/atleta-conquista.webp' %}"
+                     alt="Atleta recebendo uma premiação em competição esportiva"
+                     width="720"
+                     height="720"
+                     loading="lazy"
+                     decoding="async">
+                <figcaption>NA CONQUISTA.</figcaption>
+            </figure>
+            <figure>
+                <img src="{% static 'img/atleta-corrida.webp' %}"
+                     alt="Atleta de corrida durante uma prova de rua"
+                     width="720"
+                     height="720"
+                     loading="lazy"
+                     decoding="async">
+                <figcaption>NO SEU RITMO.</figcaption>
+            </figure>
+        </div>
+        <div class="sports-list" aria-label="Modalidades atendidas">
+            {% for sport in sports %}
+                <span>{{ sport }}</span>
+            {% endfor %}
+        </div>
     </div>
 </section>

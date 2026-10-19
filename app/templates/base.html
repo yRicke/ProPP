@@ -1,30 +1,43 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f3f1eb">
-    <title>{% block title %}PRO — Prevenção & Performance{% endblock %}</title>
-    <meta name="description" content="Treine com método. Protocolos práticos de prevenção de lesões e performance para atletas, profissionais de Educação Física e fisioterapeutas.">
-    <meta property="og:title" content="PRO — Prevenção & Performance">
-    <meta property="og:description" content="Prevenção, performance e aplicação prática. Evolua com segurança, força e direção.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/mentores-pro.webp' %}">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
-    <link rel="preload" href="{% static 'fonts/saira-condensed-800-latin.woff2' %}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{% static 'fonts/manrope-latin.woff2' %}" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% block styles %}{% endblock %}
-    {% block scripts %}{% endblock %}
-</head>
-<body>
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    {% include 'blocks/nav_bar.html' %}
-    <main id="conteudo" tabindex="-1">{% block content %}{% endblock %}</main>
-    {% include 'blocks/footer.html' %}
-    {% block overlays %}{% endblock %}
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#f3f1eb">
+        <title>{% block title %}PRO — Prevenção & Performance{% endblock %}</title>
+        <meta name="description"
+              content="Treine com método. Protocolos práticos de prevenção de lesões e performance para atletas, profissionais de Educação Física e fisioterapeutas.">
+        <meta property="og:title" content="PRO — Prevenção & Performance">
+        <meta property="og:description"
+              content="Prevenção, performance e aplicação prática. Evolua com segurança, força e direção.">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="pt_BR">
+        <meta property="og:image"
+              content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/mentores-pro.webp' %}">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
+        <link rel="preload"
+              href="{% static 'fonts/saira-condensed-800-latin.woff2' %}"
+              as="font"
+              type="font/woff2"
+              crossorigin>
+        <link rel="preload"
+              href="{% static 'fonts/manrope-latin.woff2' %}"
+              as="font"
+              type="font/woff2"
+              crossorigin>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% block styles %}{% endblock %}
+        {% block scripts %}{% endblock %}
+    </head>
+    <body>
+        <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+        {% include "blocks/nav_bar.html" %}
+        <main id="conteudo" tabindex="-1">
+            {% block content %}{% endblock %}
+        </main>
+        {% include "blocks/footer.html" %}
+        {% block overlays %}{% endblock %}
+    </body>
 </html>

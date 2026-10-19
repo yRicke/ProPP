@@ -1,12 +1,24 @@
 <footer class="site-footer">
     <div class="container footer-top">
-        <a class="brand brand--light" href="#inicio" aria-label="PRO Prevenção e Performance — início">{% include 'blocks/brand.html' %}</a>
-        <p>Preparação para o esporte.<br>Conhecimento para a vida.</p>
-        <a class="text-link" href="mailto:{{ course.contact_email }}">Fale com a PRO {% include 'blocks/arrow.html' %}</a>
+        <a class="brand brand--light"
+           href="#inicio"
+           aria-label="PRO Prevenção e Performance — início">{% include "blocks/brand.html" %}</a>
+        <p>
+            Preparação para o esporte.
+            <br>
+            Conhecimento para a vida.
+        </p>
+        <a class="text-link" href="mailto:{{ course.contact_email }}">Fale com a PRO
+            {% include "blocks/arrow.html" %}
+        </a>
     </div>
     <div class="container footer-bottom">
-        <small>© {% now 'Y' %} PRO Prevenção e Performance.</small>
-        <nav aria-label="Links do rodapé"><a href="#metodo">O método</a><a href="#duvidas">Dúvidas</a><a href="{{ course.login_url }}">Área do aluno ↗</a></nav>
+        <small>© {% now "Y" %} PRO Prevenção e Performance.</small>
+        <nav aria-label="Links do rodapé">
+            <a href="#metodo">O método</a>
+            <a href="#duvidas">Dúvidas</a>
+            <a href="{{ course.login_url }}">Área do aluno ↗</a>
+        </nav>
         <span class="footer-signature">PREVENIR. PREPARAR. PERFORMAR.</span>
     </div>
 </footer>

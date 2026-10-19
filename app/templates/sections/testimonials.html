@@ -1,9 +1,57 @@
-<section class="section testimonials" id="depoimentos" aria-labelledby="testimonials-title">
+<section class="section testimonials"
+         id="depoimentos"
+         aria-labelledby="testimonials-title">
     <div class="container">
-        <div class="section-heading section-heading--split" data-reveal><div><p class="eyebrow"><span class="section-index">05 /</span> QUEM JÁ ESTÁ EM MOVIMENTO</p><h2 class="section-title" id="testimonials-title" data-heading>NA VOZ DE QUEM<br><em>TREINA COM A PRO.</em></h2></div><div class="testimonial-navigation" data-carousel-controls hidden><button class="icon-button" type="button" aria-label="Depoimento anterior" data-carousel-prev>←</button><button class="icon-button" type="button" aria-label="Próximo depoimento" data-carousel-next>→</button></div></div>
-        <div class="testimonial-track" data-carousel tabindex="0" role="region" aria-label="Depoimentos de alunos; use as setas para navegar">
-            {% for quote, name, role in testimonials %}<figure class="testimonial"><span class="testimonial__quote" aria-hidden="true">“</span><blockquote>{{ quote }}</blockquote><figcaption><span class="testimonial__initials" aria-hidden="true">{{ name|first }}</span><div><strong>{{ name }}</strong><span>{{ role }}</span></div><span class="testimonial__index">0{{ forloop.counter }} / 06</span></figcaption></figure>{% endfor %}
+        <div class="section-heading section-heading--split" data-reveal>
+            <div>
+                <p class="eyebrow">
+                    <span class="section-index">05 /</span> QUEM JÁ ESTÁ EM MOVIMENTO
+                </p>
+                <h2 class="section-title" id="testimonials-title" data-heading>
+                    NA VOZ DE QUEM
+                    <br>
+                    <em>TREINA COM A PRO.</em>
+                </h2>
+            </div>
+            <div class="testimonial-navigation" data-carousel-controls hidden>
+                <button class="icon-button"
+                        type="button"
+                        aria-label="Depoimento anterior"
+                        data-carousel-prev>←</button>
+                <button class="icon-button"
+                        type="button"
+                        aria-label="Próximo depoimento"
+                        data-carousel-next>→</button>
+            </div>
         </div>
-        <div class="testimonial-bottom"><span>HISTÓRIAS, MODALIDADES E OBJETIVOS DIFERENTES.</span><span class="carousel-position" data-carousel-position aria-live="polite" aria-atomic="true">01 — 06</span></div>
+        <div class="testimonial-track"
+             data-carousel
+             tabindex="0"
+             role="region"
+             aria-label="Depoimentos de alunos; use as setas para navegar">
+            {% for quote, name, role in testimonials %}
+                <figure class="testimonial">
+                    <span class="testimonial__quote" aria-hidden="true">“</span>
+                    <blockquote>
+                        {{ quote }}
+                    </blockquote>
+                    <figcaption>
+                        <span class="testimonial__initials" aria-hidden="true">{{ name|first }}</span>
+                        <div>
+                            <strong>{{ name }}</strong>
+                            <span>{{ role }}</span>
+                        </div>
+                        <span class="testimonial__index">0{{ forloop.counter }} / 06</span>
+                    </figcaption>
+                </figure>
+            {% endfor %}
+        </div>
+        <div class="testimonial-bottom">
+            <span>HISTÓRIAS, MODALIDADES E OBJETIVOS DIFERENTES.</span>
+            <span class="carousel-position"
+                  data-carousel-position
+                  aria-live="polite"
+                  aria-atomic="true">01 — 06</span>
+        </div>
     </div>
 </section>

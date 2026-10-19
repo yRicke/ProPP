@@ -2,28 +2,69 @@
 <section class="section method" id="metodo" aria-labelledby="method-title">
     <div class="container">
         <div class="section-heading section-heading--split" data-reveal>
-            <div><p class="eyebrow"><span class="section-index">02 /</span> O MÉTODO PRO</p><h2 class="section-title" id="method-title" data-heading>PREPARAÇÃO QUE<br><em>ENTRA EM JOGO.</em></h2></div>
+            <div>
+                <p class="eyebrow">
+                    <span class="section-index">02 /</span> O MÉTODO PRO
+                </p>
+                <h2 class="section-title" id="method-title" data-heading>
+                    PREPARAÇÃO QUE
+                    <br>
+                    <em>ENTRA EM JOGO.</em>
+                </h2>
+            </div>
             <p>Prevenção, performance e aplicação prática. Um caminho para desenvolver as capacidades que o esporte exige de você.</p>
         </div>
         <div class="method-grid">
             <figure class="method-photo" data-reveal>
-                <img src="{% static 'img/atleta-ciclismo.webp' %}" alt="Atleta de ciclismo em treino na estrada" width="900" height="900" loading="lazy" decoding="async">
-                <div class="method-photo__overlay" aria-hidden="true"><span>DA BASE<br>À PERFORMANCE.</span><span class="red-slashes">///</span></div>
+                <img src="{% static 'img/atleta-ciclismo.webp' %}"
+                     alt="Atleta de ciclismo em treino na estrada"
+                     width="900"
+                     height="900"
+                     loading="lazy"
+                     decoding="async">
+                <div class="method-photo__overlay" aria-hidden="true">
+                    <span>DA BASE
+                        <br>
+                    À PERFORMANCE.</span>
+                    <span class="red-slashes">///</span>
+                </div>
                 <figcaption>O movimento é seu. A preparação é PRO.</figcaption>
             </figure>
             <div class="method-list">
                 {% for item in method %}
-                <article class="method-item" data-reveal>
-                    <span class="method-item__number">0{{ forloop.counter }}</span>
-                    <div><h3>{{ item.title }}</h3><p>{{ item.description }}</p><span class="method-item__detail">{{ item.detail }}</span></div>
-                    <span class="method-item__arrow" aria-hidden="true">↗</span>
-                </article>
+                    <article class="method-item" data-reveal>
+                        <span class="method-item__number">0{{ forloop.counter }}</span>
+                        <div>
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.description }}</p>
+                            <span class="method-item__detail">{{ item.detail }}</span>
+                        </div>
+                        <span class="method-item__arrow" aria-hidden="true">↗</span>
+                    </article>
                 {% endfor %}
             </div>
         </div>
         <div class="delivery" data-reveal>
-            <div class="delivery-heading"><p class="eyebrow">DENTRO DA PLATAFORMA</p><h3>Conhecimento para<br>colocar em movimento.</h3><a class="text-link" href="#inscricao">Tenha acesso completo {% include 'blocks/arrow.html' %}</a></div>
-            <div class="delivery-grid">{% for title, description in benefits %}<div class="delivery-item"><span class="delivery-item__mark" aria-hidden="true">+</span><h4>{{ title }}</h4><p>{{ description }}</p></div>{% endfor %}</div>
+            <div class="delivery-heading">
+                <p class="eyebrow">DENTRO DA PLATAFORMA</p>
+                <h3>
+                    Conhecimento para
+                    <br>
+                    colocar em movimento.
+                </h3>
+                <a class="text-link" href="#inscricao">Tenha acesso completo
+                    {% include "blocks/arrow.html" %}
+                </a>
+            </div>
+            <div class="delivery-grid">
+                {% for title, description in benefits %}
+                    <div class="delivery-item">
+                        <span class="delivery-item__mark" aria-hidden="true">+</span>
+                        <h4>{{ title }}</h4>
+                        <p>{{ description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
